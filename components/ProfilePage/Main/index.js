@@ -1,16 +1,27 @@
 import React from "react";
-import CollectionItems from "../CollectionItems";
-import SectionHeading from "../SectionHeading";
+import ItemsList from "../ItemsList";
 import styles from "./styles.module.css";
+import { MdOndemandVideo } from "react-icons/md";
 
 const Main = () => {
   return (
     <main className={styles.main}>
-      <SectionHeading>Collections</SectionHeading>
-      <CollectionItems
-        items={[{ text: "Images" }, { text: "Memes" }, { text: "Videos" }]}
+      <ItemsList
+        title="Collections"
+        items={[
+          { text: "Images", icon: <MdOndemandVideo /> },
+          { text: "Memes", icon: <MdOndemandVideo /> },
+          { text: "Videos", icon: <MdOndemandVideo /> },
+        ]}
       />
-      <SectionHeading>Flow</SectionHeading>
+      <ItemsList
+        title="Flow"
+        items={[
+          { text: "Images", icon: <MdOndemandVideo /> },
+          { text: "Memes", icon: <MdOndemandVideo /> },
+          { text: "Videos", icon: <MdOndemandVideo /> },
+        ]}
+      />
     </main>
   );
 };

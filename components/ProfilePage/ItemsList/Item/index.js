@@ -1,13 +1,12 @@
 import React from "react";
-import Card from "../../../UI/Card";
 import styles from "./styles.module.css";
 
 const CollectionItem = (props) => {
   return (
-    <Card>
+    <div className={styles.collectionItemContainer}>
       <div className={styles.text}>{props.text}</div>
-      {props.icon}
-    </Card>
+      <span className={styles.icon}>{props.icon}</span>
+    </div>
   );
 };
 

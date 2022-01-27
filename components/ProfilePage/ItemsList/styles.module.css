@@ -1,0 +1,3 @@
+.itemsList {
+  @apply flex  w-full justify-around mb-4;
+}

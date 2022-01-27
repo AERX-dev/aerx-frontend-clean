@@ -2,10 +2,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
 import styles from "./styles.module.css";
-import IconButtonsGroup from "../UI/IconButtonsGroup";
-import IconButton from "../UI/IconButton";
-import { FcSearch, FcPlus } from "react-icons/fc";
-import { FaPlus } from "react-icons/fa";
+import FloatingIconButtons from "./FloatingIconButtons";
 
 const ProfilePage = () => {
   return (
@@ -17,16 +14,8 @@ const ProfilePage = () => {
         <Main />
       </div>
 
-      <div className={styles.iconButtonsGroupContainer}>
-        <IconButtonsGroup>
-          <IconButton>
-            <FcSearch />
-          </IconButton>
-          <IconButton>
-            <FaPlus />
-          </IconButton>
-        </IconButtonsGroup>
-      </div>
+      <div className={styles.iconButtonsGroupContainer}></div>
+      <FloatingIconButtons />
     </div>
   );
 };
