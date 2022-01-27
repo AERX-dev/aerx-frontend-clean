@@ -9,3 +9,7 @@
 .mainContainer {
   @apply flex-1;
 }
+
+.iconButtonsGroupContainer {
+  @apply absolute bottom-4 right-8;
+}

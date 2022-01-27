@@ -1,0 +1,3 @@
+.iconButtonsGroup {
+  @apply flex flex-col;
+}

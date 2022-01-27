@@ -6,6 +6,7 @@ const CollectionItem = (props) => {
   return (
     <Card>
       <div className={styles.text}>{props.text}</div>
+      {props.icon}
     </Card>
   );
 };

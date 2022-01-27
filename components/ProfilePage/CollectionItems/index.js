@@ -6,7 +6,7 @@ const CollectionItems = (props) => {
   return (
     <div className={styles.collectionItems}>
       {props.items.map((item, idx) => (
-        <CollectionItem key={idx} text={item.text} />
+        <CollectionItem key={idx} text={item.text} icon={item.icon} />
       ))}
     </div>
   );

@@ -1,7 +1,19 @@
 import React from "react";
+import IconButton from "../components/UI/IconButton";
+import { FaAddressBook } from "react-icons/fa";
 
 const test = () => {
-  return <div className="text-4xl font-work-sans"> This is Work Sans</div>;
+  return (
+    <>
+      <p>Para 1 </p>
+      <p>Para 1 </p>
+      <p>Para 1 </p>
+      <p>Para 1 </p>
+      <IconButton>
+        <FaAddressBook />
+      </IconButton>
+    </>
+  );
 };
 
 export default test;
