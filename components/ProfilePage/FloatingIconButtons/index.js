@@ -18,12 +18,3 @@ const FloatingIconButtons = () => {
 };
 
 export default FloatingIconButtons;
-
-<IconButtonsGroup>
-  <IconButton>
-    <FcSearch />
-  </IconButton>
-  <IconButton>
-    <FaPlus />
-  </IconButton>
-</IconButtonsGroup>;
