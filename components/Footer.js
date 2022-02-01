@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="grid grid-cols-1 lg:grid-cols-5 lg:gap-4 py-10 lg:px-[100px] lg:py-[100px] lg:h-[450px] bg-white border-2 border-red-400">
       <div className="flex flex-col items-start w-full px-5 sm:flex-row lg:col-span-2 sm:px-16 lg:px-0 lg:flex-col">
         <div className="relative h-[82px] w-20 sm:w-44 mb-[27px]">
-          <Image src={footerLogoImg} layout="fill" />
+          <Image src={footerLogoImg} alt="footer-logo" layout="fill" />
         </div>
         <div>
           <p className="text-lg font-normal leading-9 sm:ml-6 text-brand-text">
@@ -72,18 +72,28 @@ export default function Footer() {
         <div className="flex flex-row space-x-4">
           <Link href="#">
             <a className="hover:bg-brand/10 hover:py-1 hover:px-1">
-              <Image src={facebook} height={30} width={30} />
+              <Image
+                src={facebook}
+                alt="facebook-logo"
+                height={30}
+                width={30}
+              />
             </a>
           </Link>
 
           <Link href="#">
             <a className="hover:bg-brand/10 hover:py-1 hover:px-1">
-              <Image src={twitter} height={30} width={30} />
+              <Image src={twitter} alt="twitter-logo" height={30} width={30} />
             </a>
           </Link>
           <Link href="#">
             <a className="hover:bg-brand/10 hover:py-1 hover:px-1">
-              <Image src={linkedIn} height={30} width={30} />
+              <Image
+                src={linkedIn}
+                alt="linkedIn-logo"
+                height={30}
+                width={30}
+              />
             </a>
           </Link>
         </div>

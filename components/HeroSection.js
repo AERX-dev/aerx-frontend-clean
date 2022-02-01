@@ -22,7 +22,13 @@ export default function HeroSection() {
         </button>
       </div>
       <div className="w-full lg:w-1/2 md:h-full lg:p-20 lg:pt-36 bg-brand/10 rounded-bl-4xl">
-        <Image src={heroImage} layout="responsive" height={400} width={400} />
+        <Image
+          src={heroImage}
+          alt="hero"
+          layout="responsive"
+          height={400}
+          width={400}
+        />
       </div>
     </section>
   );

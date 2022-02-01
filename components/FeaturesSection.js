@@ -13,6 +13,7 @@ export default function FeaturesSection() {
           <div className="rounded-full p-3 sm:p-5 bg-brand-gray w-16 h-16 sm:w-[100px] sm:h-[100px] flex items-center content-center">
             <Image
               src={monetizationBlogging}
+              alt="monetization-blogging"
               height={100}
               width={100}
               className="rounded-3xl"
@@ -29,6 +30,7 @@ export default function FeaturesSection() {
           <div className="rounded-full p-3 sm:p-5 bg-brand-gray w-16 h-16 sm:w-[100px] sm:h-[100px] flex items-center content-center">
             <Image
               src={exchangeValues}
+              alt="exchange-values"
               height={100}
               width={100}
               className="rounded-3xl"
@@ -45,6 +47,7 @@ export default function FeaturesSection() {
           <div className="rounded-full p-3 sm:p-5 bg-brand-gray w-16 h-16 sm:w-[100px] sm:h-[100px] flex items-center content-center">
             <Image
               src={servicesConstruct}
+              alt="services-construct"
               height={100}
               width={100}
               className="rounded-3xl"
@@ -61,7 +64,7 @@ export default function FeaturesSection() {
       <div className="lg:space-y-[156px] space-y-16">
         <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row">
           <div className="w-full lg:w-1/2">
-            <Image src={keyboard} layout="responsive" />
+            <Image src={keyboard} alt="keyboard" layout="responsive" />
           </div>
           <div className="lg:p-[100px] lg:space-y-[26px] lg:w-1/2 px-4 space-y-4">
             <h2 className="text-4xl font-semibold leading-10 lg:leading-[65px]">
@@ -78,7 +81,11 @@ export default function FeaturesSection() {
         </div>
         <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row-reverse">
           <div className="w-full lg:w-1/2">
-            <Image src={pairProgrammers} layout="responsive" />
+            <Image
+              src={pairProgrammers}
+              alt="pair-programmers"
+              layout="responsive"
+            />
           </div>
           <div className="lg:p-[100px]  lg:space-y-[26px] lg:w-1/2 px-4 space-y-4">
             <h2 className="text-4xl font-semibold leading-10 lg:leading-[65px]">
@@ -93,7 +100,7 @@ export default function FeaturesSection() {
         </div>
         <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row">
           <div className="w-full lg:w-1/2">
-            <Image src={keyboard} layout="responsive" />
+            <Image src={keyboard} alt="keyboard" layout="responsive" />
           </div>
           <div className="lg:p-[100px] lg:space-y-[26px] lg:w-1/2 px-4 space-y-4">
             <h2 className="text-4xl font-semibold leading-10 lg:leading-[65px]">

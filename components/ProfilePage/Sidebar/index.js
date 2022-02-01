@@ -11,6 +11,7 @@ const Sidebar = (props) => {
       <div>
         <Image
           src="/images/aerx_logo-removebg.svg"
+          alt="aerx-logo"
           height="30"
           width="80"
           className="text-blue-400"
@@ -20,10 +21,11 @@ const Sidebar = (props) => {
         {/* profile image here */}
         <Image
           src="/images/photo-1555421689-491a97ff2040.jpeg"
+          alt="profile"
           width="120"
           height="120"
           className={styles.profileImg}
-        ></Image>
+        />
       </div>
       <UserBio
         displayName="Ivan Ivanov"

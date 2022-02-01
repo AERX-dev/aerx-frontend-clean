@@ -26,6 +26,7 @@ export default function Nav() {
           <a className="w-[78px] h-[75px] bg-transparent hover:bg-white">
             <Image
               src={aerxLogo}
+              alt="aerx-logo"
               className="rounded-sm"
               layout="responsive"
               alt="aerx logo"

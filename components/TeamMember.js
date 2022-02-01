@@ -5,7 +5,7 @@ export default function TeamMember() {
   return (
     <div className="flex flex-row h-[248px] bg-white w-full">
       <div className="relative w-2/5">
-        <Image src={coder} layout="fill" />
+        <Image src={coder} alt="coder" layout="fill" />
       </div>
       <div className="flex flex-col py-10 px-6 lg:px-[30px] w-3/5">
         <h3 className="text-2xl font-bold leading-8 tracking-[0.1px] text-team-header">
