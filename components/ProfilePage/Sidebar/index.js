@@ -32,7 +32,13 @@ const Sidebar = (props) => {
         userName="ivan.ivanov"
         about="I work as a doctor, but in my free time I like to make funny pictures and videos. See more details in my collection ."
       />
-      <UserInfo balance="786,01" />
+      <UserInfo
+        balance="786,01"
+        following="4.5K"
+        followers="750K"
+        likes="10K"
+        reposts="875"
+      />
     </aside>
   );
 };

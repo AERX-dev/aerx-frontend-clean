@@ -22,7 +22,26 @@ const UserInfo = (props) => {
       </div>
       <div>
         <h4 className={styles.userInfoType}>Social</h4>
-        <CardOutlined></CardOutlined>
+        <CardOutlined>
+          <div className={styles.userSocialContainer}>
+            <section>
+              <h3>{props.following} </h3>
+              <p>Following</p>
+            </section>
+            <section>
+              <h3> {props.followers} </h3>
+              <p> Followers </p>
+            </section>
+            <section>
+              <h3> {props.likes} </h3>
+              <p> Likes </p>
+            </section>
+            <section>
+              <h3> {props.reposts} </h3>
+              <p> Reposts </p>
+            </section>
+          </div>
+        </CardOutlined>
       </div>
     </div>
   );

@@ -16,9 +16,22 @@
 
 .uploadBtn,
 .downloadBtn {
-  @apply rounded-full bg-blue-500 p-2;
+  @apply rounded-full bg-blue-500 p-2 cursor-pointer;
 }
 
 .iconButtonsContainer {
-  @apply px-6;
+  @apply px-5;
+}
+.userSocialContainer {
+  @apply grid gap-x-2 grid-cols-2;
+}
+
+.userSocialContainer section {
+  @apply text-center;
+}
+.userSocialContainer h3 {
+  @apply text-lg;
+}
+.userSocialContainer p {
+  @apply text-xs text-profile-blue-50;
 }
