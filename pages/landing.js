@@ -13,25 +13,10 @@ export default function Home() {
   return (
     <Layout>
       <div className="flex flex-col">
-        <h1>TODO: lists most recent contents</h1>
-        <div style={{ background: "white" }}>
-          {[1, 1, 1].map((item, i) => (
-            <div
-              style={{
-                margin: 20,
-                height: 200,
-                width: "60%",
-                border: `1px solid black`,
-              }}
-            />
-          ))}
-        </div>
-        {/* 
         <HeroSection />
         <FeaturesSection />
         <NewsLetterSection />
         <TeamSection />
-         */}
       </div>
     </Layout>
   );
