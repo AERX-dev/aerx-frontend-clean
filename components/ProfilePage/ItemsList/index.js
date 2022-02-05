@@ -16,7 +16,7 @@ const CollectionItemsList = (props) => {
       {isOpen && (
         <div className={`flex  w-full justify-around mb-4 h-12  `}>
           {props.items.map((item, idx) => (
-            <CollectionItem key={idx} text={item.text} icon={item.icon} />
+            <CollectionItem key={idx} text={item.text} icon={item.icon} img={item.img}/>
           ))}
         </div>
       )}

@@ -1,3 +1,4 @@
 .outlinedCard {
-  @apply p-2 rounded-lg border-2 border-profile-gray-200;
+  @apply p-3 rounded-xl border-4 border-profile-gray-200;
+  border-radius: 16px;
 }

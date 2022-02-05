@@ -8,24 +8,25 @@ const Sidebar = (props) => {
   return (
     <aside className={styles.sidebar} {...props}>
       {/* Site logo */}
-      <div>
+      <div className={styles.logoContainer}>
         <Image
           src="/images/aerx_logo-removebg.svg"
           alt="aerx-logo"
-          height="30"
-          width="80"
-          className="text-blue-400"
+          layout="fill"
+          objectFit="contain"
         />
       </div>
-      <div className={styles.profileImgContainer}>
-        {/* profile image here */}
-        <Image
-          src="/images/photo-1555421689-491a97ff2040.jpeg"
-          alt="profile"
-          width="120"
-          height="120"
-          className={styles.profileImg}
-        />
+      <div className="flex justify-center mb-4">
+        <div className={styles.profileImgContainer}>
+          {/* profile image here */}
+          <Image
+            src="/images/1/profile3.png"
+            alt="profile"
+            layout="fill"
+            objectFit="contain"
+            className={styles.profileImg}
+          />
+        </div>
       </div>
       <UserBio
         displayName="Ivan Ivanov"
@@ -33,7 +34,7 @@ const Sidebar = (props) => {
         about="I work as a doctor, but in my free time I like to make funny pictures and videos. See more details in my collection ."
       />
       <UserInfo
-        balance="786,01"
+        balance="786,01æ"
         following="4.5K"
         followers="750K"
         likes="10K"

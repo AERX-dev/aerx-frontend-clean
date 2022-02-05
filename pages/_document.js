@@ -6,12 +6,16 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Fonts will be here */}
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Jost&family=Work+Sans&display=swap"
             rel="stylesheet"
-          />
+          /> */}
+          
+          <link rel="preconnect" href="https://fonts.googleapis.com"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
         </Head>
         <body className="text-white bg-brand-dark">
           <Main />

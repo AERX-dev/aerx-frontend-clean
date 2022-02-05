@@ -3,7 +3,8 @@
 }
 
 .sidebarContainer {
-  @apply w-1/4;
+  /* @apply w-1/4; */
+  width: 30%;
 }
 
 .mainContainer {

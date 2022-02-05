@@ -1,0 +1,42 @@
+.section1 {
+  @apply bg-profile-blue-300 rounded-3xl p-8  flex items-center;
+  flex-direction: column
+}
+
+.section2 {
+  @apply bg-profile-blue-300 rounded-3xl p-8 items-center;
+  flex-direction: column;
+  max-width: 40%;
+}
+
+.itemHead {
+  @apply font-work-sans tracking-wider font-medium;
+  font-size: 20px;
+  color: #B9BFD7;
+  margin-top: 8px;
+}
+
+.imageContainer {
+  @apply place-items-center rounded-xl;
+  position: relative;
+  height: 250px;
+  width: 250px;
+  background: #202020;
+}
+
+.image {
+  @apply rounded-xl;
+}
+
+.largeText {
+  height: 250px;
+  overflow-y: hidden;
+}
+
+.imageContainer3 {
+  @apply place-items-center rounded-xl;
+  position: relative;
+  height: 250px;
+  width: 900px;
+  background: #202020;
+}

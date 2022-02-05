@@ -1,0 +1,15 @@
+.root {
+  @apply bg-profile-blue-300 rounded-xl p-2 flex justify-center items-center;
+  background: #1D232D;
+  width: 40px;
+  height: 40px; 
+  font-size: 20px;
+}
+
+.rootText {
+  @apply bg-profile-blue-300 rounded-xl p-2 flex justify-center items-center;
+  background: #1D232D;
+  color: #B9BFD7;
+  height: 40px; 
+  font-size: 20px;
+}

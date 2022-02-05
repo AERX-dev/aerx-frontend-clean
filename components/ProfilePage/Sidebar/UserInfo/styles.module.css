@@ -1,26 +1,29 @@
 .userInfoContainer {
-  @apply px-2 py-4 flex justify-between;
+  @apply px-2 flex justify-between;
 }
 
 .userInfoType {
-  @apply text-xs font-jost relative -left-1 mb-1;
+  @apply text-xs font-jost relative mb-2;
 }
 
 .balanceHeading {
-  @apply text-xs  font-sans text-profile-blue-50;
+  @apply text-xs  font-jost text-profile-blue-50 mb-1;
 }
 
 .balance {
-  @apply font-jost text-xl font-bold mb-3;
+  @apply font-jost font-bold mb-3 ;
+  font-size: 32px;
 }
 
 .uploadBtn,
 .downloadBtn {
   @apply rounded-full bg-blue-500 p-2 cursor-pointer;
+  font-size: 24px;
 }
 
 .iconButtonsContainer {
-  @apply px-5;
+  @apply pt-6 flex justify-around;
+  
 }
 .userSocialContainer {
   @apply grid gap-x-2 grid-cols-2;
@@ -35,3 +38,9 @@
 .userSocialContainer p {
   @apply text-xs text-profile-blue-50;
 }
+
+.userSocialItemType {
+  @apply text-lg;
+  color: red;
+}
+
