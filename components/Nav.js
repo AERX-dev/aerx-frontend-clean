@@ -29,7 +29,6 @@ export default function Nav() {
               alt="aerx-logo"
               className="rounded-sm"
               layout="responsive"
-              alt="aerx logo"
               priority
               height={100}
               width={100}

@@ -7,7 +7,7 @@
 }
 
 .title {
-  @apply text-sm font-semibold p-2 text-gray-400;
+  @apply text-sm font-semibold p-2 text-gray-400 font-jost;
 }
 
 .arrow {
