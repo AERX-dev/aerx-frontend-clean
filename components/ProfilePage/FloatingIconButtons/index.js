@@ -1,17 +1,16 @@
 import React from "react";
 import IconButtonsGroup from "../../UI/IconButtonsGroup";
 import IconButton from "../../UI/IconButton";
-import { FcSearch } from "react-icons/fc";
-import { FaPlus } from "react-icons/fa";
+import { FiSearch, FiPlus } from "react-icons/fi";
 
 const FloatingIconButtons = () => {
   return (
     <IconButtonsGroup orientation="vertical">
       <IconButton>
-        <FcSearch />
+        <FiSearch style={{fontSize: 24}}/>
       </IconButton>
       <IconButton>
-        <FaPlus />
+        <FiPlus style={{fontSize: 24}}/>
       </IconButton>
     </IconButtonsGroup>
   );
@@ -19,11 +18,11 @@ const FloatingIconButtons = () => {
 
 export default FloatingIconButtons;
 
-<IconButtonsGroup>
+{/* <IconButtonsGroup>
   <IconButton>
     <FcSearch />
   </IconButton>
   <IconButton>
     <FaPlus />
   </IconButton>
-</IconButtonsGroup>;
+</IconButtonsGroup>; */}

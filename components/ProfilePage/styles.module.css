@@ -4,11 +4,12 @@
 
 .sidebarContainer {
   /* @apply w-1/4; */
-  width: 30%;
+  width: 25%;
 }
 
 .mainContainer {
   @apply flex-1;
+  width: 75%;
 }
 
 .iconButtonsGroupContainer {
