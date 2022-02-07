@@ -1,12 +1,13 @@
 .section1 {
   @apply bg-profile-blue-300 rounded-3xl p-8  flex items-center;
-  flex-direction: column
+  flex-direction: column;
+  width: 50%;
 }
 
 .section2 {
   @apply bg-profile-blue-300 rounded-3xl p-8 items-center;
   flex-direction: column;
-  max-width: 40%;
+  width: 50%;
 }
 
 .itemHead {
@@ -19,8 +20,8 @@
 .imageContainer {
   @apply place-items-center rounded-xl;
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 100%;
   background: #202020;
 }
 
@@ -36,7 +37,15 @@
 .imageContainer3 {
   @apply place-items-center rounded-xl;
   position: relative;
-  height: 250px;
-  width: 900px;
+  height: 200px;
+  width: 100%;
   background: #202020;
+}
+
+.itemsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
