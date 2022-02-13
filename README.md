@@ -27,3 +27,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 * (next-themes)[https://github.com/pacocoursey/next-themes]
 
 
+## DevOps
+
+* (convention-commits)[https://www.conventionalcommits.org/en/v1.0.0/]
