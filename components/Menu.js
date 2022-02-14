@@ -9,7 +9,7 @@ export default function Menu({ toggled, setToggled }) {
 
   return (
     <div
-      className={`ml-2 md:ml-[142px] md:flex md:items-center w-full ${
+      className={`ml-10 md:flex md:items-center w-full ${
         toggled ? "" : "hidden"
       }`}
     >
