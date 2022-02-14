@@ -1,8 +1,8 @@
 {
   "heroSection": {
-    "title": "Welcome To AERX",
-    "subheading": "A modular social network.", 
-    "buttonText": "Get Started"
+    "title": "Добро пожаловать в AERX",
+    "subheading": "Модульная социальная сеть.", 
+    "buttonText": "Начать"
   }, 
   "features": [
     {
@@ -10,8 +10,8 @@
     }
   ], 
   "emailCapture": {
-    "title": "Email Subscribe",
-    "placeholder": "Enter your email address", 
-    "buttonText": "Subscribe"
+    "title": "Электронная почта Подписаться",
+    "placeholder": "Адрес электронной почты", 
+    "buttonText": "Подписаться"
   }
 }
