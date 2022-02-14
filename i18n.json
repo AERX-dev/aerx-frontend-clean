@@ -1,7 +1,8 @@
 {
-  "locales": ["en", "es"],
+  "locales": ["en", "es", "ru"],
   "defaultLocale": "en",
   "pages": {
-    "*": ["common"]
+    "*": ["common", "landing", "header"],
+    "/": ["landing"]
   }
 }
