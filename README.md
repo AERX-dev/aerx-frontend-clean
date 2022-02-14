@@ -3,6 +3,14 @@
 
 This is the frontend code for the AERX project – a modular social network.
 
+
+## Ecosystem
+
+* (URL)[https://aerx-frontend-clean.vercel.app/]
+* (Figma)[https://www.figma.com/file/gsnOdKN56GCvl1POx5wRLR/AERX-UX%2FUI?node-id=0%3A1]
+* (Repo)[https://github.com/AERX-dev/aerx-frontend-clean]
+
+
 ## Installation 
 
 ```bash
