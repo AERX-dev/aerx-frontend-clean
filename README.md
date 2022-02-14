@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# AERX
 
-First, run the development server:
+This is the frontend code for the AERX project – a modular social network on the (NEAR Blockchain)[https://near.org/].
+
+
+## Ecosystem
+
+* (URL)[https://aerx-frontend-clean.vercel.app/]
+* (Figma)[https://www.figma.com/file/gsnOdKN56GCvl1POx5wRLR/AERX-UX%2FUI?node-id=0%3A1]
+* (Repo)[https://github.com/AERX-dev/aerx-frontend-clean]
+
+
+## Installation 
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/AERX-dev/aerx-frontend-clean.git
+cd aerx-frontend-clean
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Tooling
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+* (react.js)[https://reactjs.org/]
+* (next)[https://nextjs.org/]
+* (near-api-js)[https://docs.near.org/docs/api/naj-quick-reference]
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Theming 
 
-To learn more about Next.js, take a look at the following resources:
+* (chakra-ui)[https://chakra-ui.com/]
+* (tailwindcss)[https://tailwindcss.com/]
+* (next-themes)[https://github.com/pacocoursey/next-themes]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## DevOps
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* (convention-commits)[https://www.conventionalcommits.org/en/v1.0.0/]
