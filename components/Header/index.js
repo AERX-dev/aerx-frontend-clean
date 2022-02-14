@@ -39,6 +39,7 @@ export default function Nav() {
               className="rounded-sm"
               layout="responsive"
               priority
+              cursor={"pointer"}
               width={"80px"}
             />
           </Link>
