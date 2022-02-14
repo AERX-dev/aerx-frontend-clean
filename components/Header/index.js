@@ -5,10 +5,12 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import ChangeLanguage from "./change-language";
 import ConnectWallet from "./connect-wallet";
+import ToggleMode from "./toggle-mode";
 import {
 	Box,
   Image as ChakraImage, 
 	HStack, 
+  useColorMode
 } from "@chakra-ui/react";
 import Sidebar from "./sidebar";
 
@@ -17,6 +19,7 @@ export default function Nav() {
   const { theme, setTheme } = useTheme();
   const { asPath } = useRouter();
   const [toggled, setToggled] = useState(false);
+	const { colorMode } = useColorMode()
 
   useEffect(() => setMounted(true), []);
 
@@ -28,7 +31,8 @@ export default function Nav() {
 				<div className="flex-1">
         <Link href={{ pathname: "/", hash: "welcome" }}>
             <ChakraImage
-              src={"/images/white-logo.svg"}
+            
+              src={ colorMode === "light" ? "/images/dark-logo.svg" : "/images/white-logo.svg" }
               alt="Logo"
               className="rounded-sm"
               layout="responsive"
@@ -38,7 +42,9 @@ export default function Nav() {
         </Link>
 				</div>
         
+        
 				<HStack>
+        <ToggleMode />
 					<ConnectWallet />
           <ChangeLanguage />
 				<Sidebar />
