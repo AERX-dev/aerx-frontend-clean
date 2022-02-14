@@ -1,7 +1,7 @@
 
 # AERX
 
-This is the frontend code for the AERX project – a modular social network.
+This is the frontend code for the AERX project – a modular social network on the (NEAR Blockchain)[https://near.org/].
 
 
 ## Ecosystem
