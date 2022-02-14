@@ -1,0 +1,17 @@
+{
+  "heroSection": {
+    "title": "Bienvenido a AERX",
+    "subheading": "Una red social modular.", 
+    "buttonText": "Empezar"
+  }, 
+  "features": [
+    {
+      "title": "foobar"
+    }
+  ], 
+  "emailCapture": {
+    "title": "Suscríbete por correo electrónico",
+    "placeholder": "Dirección de correo electrónico", 
+    "buttonText": "Suscribir"
+  }
+}

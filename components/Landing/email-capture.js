@@ -11,8 +11,7 @@ import useTranslation from "next-translate/useTranslation";
 import { useState } from "react";
 
 function EmailCapture({ rest}) {
-
-  const { t, lang } = useTranslation("common");
+  const { t } = useTranslation('landing');
   const [email, setEmail] = useState("");
   const [state, setState] = useState("IDLE");
 
@@ -43,15 +42,15 @@ function EmailCapture({ rest}) {
     <Box as="section" py={100}>
 
       <Heading textAlign={"center"} mb={8}>
-        Email Subscribe
+        {t('emailCapture.title')}
       </Heading>
 
       <Box textAlign="center">
         <Grid templateColumns={["repeat(100%)", "calc(100% - 150px) 140px"]} gap="8px" maxWidth={600} margin="0 auto" as="form" onSubmit={subscribe}
           {...rest}>
-          <Input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email" />
+          <Input onChange={(e) => setEmail(e.target.value)} type="email" placeholder={t('emailCapture.placeholder')} />
           <Button variant="outline" _hover={{ bg: "none" }} _active={{ bg: "none" }} width="100%">
-            Submit
+            {t('emailCapture.buttonText')}
           </Button>
         </Grid>
       </Box>
