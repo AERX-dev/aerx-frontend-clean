@@ -14,16 +14,17 @@ import {
 import {
 	HiOutlineMenu
 } from "react-icons/hi";
-
+import useTranslation from 'next-translate/useTranslation';
 import { useRef } from "react";
 
 function Sidebar() {
 	const { isOpen, onOpen, onClose } = useDisclosure()
 	const btnRef = useRef()
+	const { t } = useTranslation('header');
 
 	return (
 		<>
-			<IconButton variant={"outline"} _hover={{ bg: "none" }} _active={{bg: "none"}} rounded="full" ref={btnRef} fontSize={"lg"} onClick={onOpen}>
+			<IconButton aria-label={ t("ariaSidebar") } variant={"outline"} _hover={{ bg: "none" }} _active={{bg: "none"}} rounded="full" ref={btnRef} fontSize={"lg"} onClick={onOpen}>
 				<HiOutlineMenu />
 			</IconButton>
 			<Drawer
