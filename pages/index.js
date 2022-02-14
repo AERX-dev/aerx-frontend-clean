@@ -1,8 +1,5 @@
 import Head from "next/head";
-import { HeroSection, EmailCapture } from "../components/Landing";
-import FeaturesSection from "../components/FeaturesSection";
-import NewsLetterSection from "../components/NewsLetterSection";
-import TeamSection from "../components/TeamSection";
+import { HeroSection, EmailCapture, Features } from "../components/Landing";
 import Layout from "../components/Layout";
 
 export default function Home() {
@@ -14,13 +11,8 @@ export default function Home() {
     <Layout>
       <div className="flex flex-col">
         <HeroSection />
+        <Features />
         <EmailCapture />
-
-        {/* old code here */}
-        <FeaturesSection />
-        <NewsLetterSection />
-        <TeamSection />
-        {/* old code here */}
       </div>
     </Layout>
   );
