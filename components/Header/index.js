@@ -3,8 +3,6 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Menu from "../Menu";
-import MobileButton from "../MobileButton";
 import ChangeLanguage from "./change-language";
 import ConnectWallet from "./connect-wallet";
 import {
