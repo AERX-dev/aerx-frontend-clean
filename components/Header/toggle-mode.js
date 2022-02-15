@@ -5,7 +5,7 @@ import {
 import useTranslation from "next-translate/useTranslation";
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 
-function ConnectWallet() {
+function ToggleMode () {
 	const { colorMode, toggleColorMode } = useColorMode()
 	const { t } = useTranslation('header');
 
@@ -16,4 +16,4 @@ function ConnectWallet() {
 	)
 }
 
-export default ConnectWallet;
+export default ToggleMode;
