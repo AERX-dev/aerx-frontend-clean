@@ -10,7 +10,7 @@ import {
   Box,
   Image as ChakraImage,
   HStack,
-  useColorMode
+  useColorMode,
 } from "@chakra-ui/react";
 import Sidebar from "./sidebar";
 import useTranslation from "next-translate/useTranslation";
@@ -32,7 +32,7 @@ export default function Nav() {
     <nav className="sticky top-0 z-50 w-full bg-transparent px-4 py-4 md:px-10">
       <Box className="flex flex-row items-center justify-center w-full">
         <div className="flex-1">
-          <Link href={{ pathname: "/"}}>
+          <Link href={{ pathname: "/" }}>
             <ChakraImage
               src={colorMode === "light" ? "/images/dark-logo.svg" : "/images/white-logo.svg"}
               alt={t('logoAlt')}
@@ -48,7 +48,7 @@ export default function Nav() {
 
         <HStack>
           <ToggleMode />
-          <ConnectWallet />
+          <ConnectWallet/>
           <ChangeLanguage />
           <Sidebar />
         </HStack>
