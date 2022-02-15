@@ -11,25 +11,19 @@ import {
   Image as ChakraImage,
   HStack,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Sidebar from "./sidebar";
 import useTranslation from "next-translate/useTranslation";
 
 
-export default function Nav() {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const { asPath } = useRouter();
-  const [toggled, setToggled] = useState(false);
+function Header () {
   const { colorMode } = useColorMode()
   const { t } = useTranslation('header');
-
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
+  const bg = useColorModeValue("#ffffffdd", "#0a0a0add");
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-transparent px-4 py-4 md:px-10">
+    <Box bg={bg} as="nav" backdropFilter={"blur(8px)"} className="sticky top-0 z-50 w-full bg-transparent px-4 py-4 md:px-10">
       <Box className="flex flex-row items-center justify-center w-full">
         <div className="flex-1">
           <Link href={{ pathname: "/" }}>
@@ -48,12 +42,13 @@ export default function Nav() {
 
         <HStack>
           <ToggleMode />
-          <ConnectWallet/>
           <ChangeLanguage />
-          <Sidebar />
+          <ConnectWallet/>
+          {/* <Sidebar /> */}
         </HStack>
-        {/* <Menu setToggled={setToggled} toggled={toggled} /> */}
       </Box>
-    </nav>
+    </Box>
   );
 }
+
+export default Header;
