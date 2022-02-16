@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { HeroSection, EmailCapture, Features } from "../components/Landing";
+import { HeroSection, Section01, Section02, Section03, Section04, Section05, Section06, Section07, ChannelSection } from "../components/Landing";
 import Layout from "../components/Layout";
-
+import { Box } from "@chakra-ui/react";
 export default function Home() {
   <Head>
     {/* Primary Meta Tags */}
@@ -9,11 +9,17 @@ export default function Home() {
   </Head>;
   return (
     <Layout>
-      <div className="flex flex-col">
+      <Box className="flex flex-col" bg="#251343" color="white"> 
         <HeroSection />
-        <Features />
-        <EmailCapture />
-      </div>
+        <Section01 />
+        <Section02 />
+        <Section03 />
+        <Section04 />
+        <Section05 />
+        <Section06 />
+        <Section07 />
+        <ChannelSection />
+      </Box>
     </Layout>
   );
 }

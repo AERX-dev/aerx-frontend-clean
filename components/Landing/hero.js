@@ -10,8 +10,7 @@ function HeroSection() {
   const { t } = useTranslation('landing');
 
   return (
-    <Box as="section" py={100}>
-
+    <Box as="section">
       <Heading textAlign={"center"}>
         {t('heroSection.title')}
       </Heading>

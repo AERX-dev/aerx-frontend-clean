@@ -3,9 +3,9 @@ import Footer from "../components/Footer";
 
 export default function Layout({ children }) {
   return (
-    <div className="w-full px-4 md:px-0">
+    <div >
       <Header />
-      <main className="md:py-6">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   );
