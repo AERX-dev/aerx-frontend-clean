@@ -4,7 +4,7 @@ import {
 
 
 function Account () {
-	return <Box px>
+	return <Box>
 		Hi
 	</Box>
 
