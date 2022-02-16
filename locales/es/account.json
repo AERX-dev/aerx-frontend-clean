@@ -1,3 +1,12 @@
 {
-  "title": "Account"
+  "title": "Account", 
+  "label": {
+    "username": "Username",
+    "email": "Email",
+    "fullName": "Full Name",
+    "profilePicture": "Profile Picture",
+    "aboutMe": "About Me", 
+    "save": "Save", 
+    "upload": "Upload"
+  }
 }
