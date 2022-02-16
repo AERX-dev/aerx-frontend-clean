@@ -41,7 +41,7 @@ function Header () {
 
 
         <HStack>
-          <ToggleMode />
+          {/* <ToggleMode /> */}
           <ChangeLanguage />
           <ConnectWallet/>
           {/* <Sidebar /> */}
