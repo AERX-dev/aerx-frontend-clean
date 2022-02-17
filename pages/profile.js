@@ -10,13 +10,13 @@ import {
 } from "@chakra-ui/react";
 
 import { AiOutlineThunderbolt } from "react-icons/ai";
-
+import NewPost from "../components/Post/new-post";
 import Layout from "../components/Layout";
 
 const Profile = () => {
   const picBg = useColorModeValue("gray.200", "gray.700");
   const postBg = useColorModeValue("gray.50", "gray.900");
-  const imageBg = useColorModeValue("#fafafa", "#0a0a0a");
+  const imageBg = useColorModeValue("gray.100", "#0a0a0a");
   return <Layout>
 
     <Box height="250px" bg={imageBg } width="100%" position="absolute">
@@ -40,9 +40,7 @@ const Profile = () => {
           </Text>
 
           <Box mb={4}>
-          <Button>
-            New Post
-          </Button>
+          <NewPost />
           </Box>
 
           {
