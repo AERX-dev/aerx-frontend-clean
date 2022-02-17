@@ -20,7 +20,7 @@ import useTranslation from "next-translate/useTranslation";
 function Header () {
   const { colorMode } = useColorMode()
   const { t } = useTranslation('header');
-  const bg = useColorModeValue("#ffffffdd", "#0a0a0add");
+  const bg = useColorModeValue("#ffffffdd", "#1a202cdd");
 
   return (
     <Box bg={bg} as="nav" backdropFilter={"blur(8px)"} className="sticky top-0 z-50 w-full bg-transparent px-4 py-4 md:px-10">
@@ -41,7 +41,7 @@ function Header () {
 
 
         <HStack>
-          {/* <ToggleMode /> */}
+          <ToggleMode />
           <ChangeLanguage />
           <ConnectWallet/>
           {/* <Sidebar /> */}

@@ -3,16 +3,32 @@ import {
   Heading,
   Box,
   Button,
+  Image as ChakraImage,
+  useColorMode, 
 } from "@chakra-ui/react";
 import useTranslation from "next-translate/useTranslation";
 
 function HeroSection() {
   const { t } = useTranslation('landing');
-
+  const { colorMode } = useColorMode()
   return (
-    <Box as="section">
-      <Heading textAlign={"center"}>
-        {t('heroSection.title')}
+    <Box as="section" py={100}>
+      <Heading textAlign={"center"} size="2xl" mb={2}>
+        {t('heroSection.title')} 
+
+        <ChakraImage
+              src={colorMode === "light" ? "/images/dark-logo.svg" : "/images/white-logo.svg"}
+              alt={t('logoAlt')}
+              className="rounded-sm"
+              layout="responsive"
+              priority
+              display="inline"
+              cursor={"pointer"}
+              width={"100px"}
+              position="relative" 
+              bottom="2px"
+              marginLeft="12px"
+            />
       </Heading>
 
       <Heading textAlign={"center"} mb={8}>
