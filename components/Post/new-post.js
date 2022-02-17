@@ -23,7 +23,7 @@ function NewPost () {
 
 		<Modal isOpen={isOpen} onClose={onClose} size="xl">
 			<ModalOverlay />
-			<ModalContent>
+			<ModalContent mx={5}>
 				<ModalHeader>New Post</ModalHeader>
 				<ModalCloseButton />
 				<ModalBody>
