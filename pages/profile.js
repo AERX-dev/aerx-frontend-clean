@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 import { AiOutlineThunderbolt } from "react-icons/ai";
-
+import NewPost from "../components/Post/new-post";
 import Layout from "../components/Layout";
 
 const Profile = () => {
@@ -40,9 +40,7 @@ const Profile = () => {
           </Text>
 
           <Box mb={4}>
-          <Button>
-            New Post
-          </Button>
+          <NewPost />
           </Box>
 
           {
