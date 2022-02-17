@@ -39,8 +39,10 @@ const Page = () => {
           <InputGroup>
             <InputLeftElement
               pointerEvents='none'
-              children={<AtSignIcon color='gray.300' />}
-            />
+              
+            >
+              <AtSignIcon color='gray.300' />
+            </InputLeftElement>
             <Input type="text" />
           </InputGroup>
         </FormControl>

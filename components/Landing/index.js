@@ -7,6 +7,8 @@ import Section05 from "./05-section";
 import Section06 from "./06-section";
 import Section07 from "./07-section";
 import ChannelSection from "./channel";
+import Features from "./features";
+import EmailCapture from "./email-capture";
 
 
-export { HeroSection, Section01, Section02, Section03, Section04, Section05, Section06, Section07, ChannelSection };
+export { HeroSection, EmailCapture, Features };
