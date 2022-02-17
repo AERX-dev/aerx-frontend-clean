@@ -19,9 +19,7 @@ const Profile = () => {
   const imageBg = useColorModeValue("#fafafa", "#0a0a0a");
   return <Layout>
 
-
     <Box height="250px" bg={imageBg } width="100%" position="absolute">
-
     </Box>
 
     <Box className="px-4 md:px-10" py={4} zIndex={10} position={"relative"} minHeight="100vh">

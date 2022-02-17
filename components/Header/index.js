@@ -17,6 +17,7 @@ import {
 import Sidebar from "./sidebar";
 import useTranslation from "next-translate/useTranslation";
 import { AiOutlineUser, AiOutlineProfile } from "react-icons/ai";
+import { IoNewspaperOutline, IoSettingsOutline } from "react-icons/io5";
 
 function Header () {
   const { colorMode } = useColorMode()
@@ -43,9 +44,16 @@ function Header () {
 
         <HStack>
 
+        <Link href="/feed">
+        <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
+          <IoNewspaperOutline />
+        </IconButton>
+        </Link>
+        
+
         <Link href="/account">
         <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
-          <AiOutlineProfile />
+          <IoSettingsOutline />
         </IconButton>
         </Link>
 
