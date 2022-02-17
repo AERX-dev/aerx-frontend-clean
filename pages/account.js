@@ -26,8 +26,17 @@ const Page = () => {
         <Heading as="h1" mb={5}>{t('title')}</Heading>
 
         <FormControl mb={2}>
+          <FormLabel>{t('label.headerPicture')}</FormLabel>
+          <Input type="text" mb={2} placeholder="headerPicture" />
+
+          <Button size="sm" colorScheme={"teal"} mb={2}>
+            {t('label.upload')}
+          </Button>
+        </FormControl>
+
+        <FormControl mb={2}>
           <FormLabel>{t('label.profilePicture')}</FormLabel>
-          <Input type="text" mb={2} />
+          <Input type="text" mb={2} placeholder="profilePicture" />
 
           <Button size="sm" colorScheme={"blue"} mb={2}>
             {t('label.upload')}
@@ -43,23 +52,23 @@ const Page = () => {
             >
               <AtSignIcon color='gray.300' />
             </InputLeftElement>
-            <Input type="text" />
+            <Input placeholder="username" type="text" />
           </InputGroup>
         </FormControl>
 
         <FormControl mb={2}>
           <FormLabel>{t('label.email')}</FormLabel>
-          <Input type="text" />
+          <Input type="text" placeholder="email" />
         </FormControl>
 
         <FormControl mb={2}>
           <FormLabel>{t('label.fullName')}</FormLabel>
-          <Input type="email" />
+          <Input type="email" placeholder="fullName" />
         </FormControl>
 
         <FormControl mb={2}>
           <FormLabel>{t('label.aboutMe')}</FormLabel>
-          <Textarea type="email" />
+          <Textarea type="email" placeholder="aboutMe" />
         </FormControl>
 
         <Button colorScheme="green" mt={2} size="lg">
