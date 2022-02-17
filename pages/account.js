@@ -22,7 +22,9 @@ const Page = () => {
 
   return (
     <Layout>
-      <Box px={5}>
+
+      
+      <Box className="px-4 md:px-10" py={4}>
         <Heading as="h1" mb={5}>{t('title')}</Heading>
 
         <FormControl mb={2}>

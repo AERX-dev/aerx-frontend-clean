@@ -24,7 +24,7 @@ export default function ChangeLanguage() {
 
   return (
     <Menu size="xs">
-        <MenuButton _hover={{ bg: "none" }} _active={{ bg: "none" }} as={IconButton} rounded="full" variant="outline" >
+        <MenuButton _hover={{ bg: "none" }} _active={{ bg: "none" }} fontSize="sm" as={IconButton} rounded="full" variant="outline" >
           {lang.toUpperCase()}
         </MenuButton>
 
