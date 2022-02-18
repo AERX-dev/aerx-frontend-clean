@@ -12,17 +12,26 @@ import {
   HStack,
   useColorMode,
   useColorModeValue,
-  IconButton, 
+  IconButton,
 } from "@chakra-ui/react";
 import Sidebar from "./sidebar";
 import useTranslation from "next-translate/useTranslation";
 import { AiOutlineUser, AiOutlineProfile } from "react-icons/ai";
 import { IoNewspaperOutline, IoSettingsOutline } from "react-icons/io5";
+import { nearStore } from '../../stores/near.js';
 
-function Header () {
+function Header() {
   const { colorMode } = useColorMode()
   const { t } = useTranslation('header');
   const bg = useColorModeValue("#ffffffdd", "#1a202cdd");
+  const state = nearStore(state => state);
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() => {
+    if (state.walletConnection && state.walletConnection.isSignedIn()) {
+      setLoggedIn(true);
+    }
+  });
 
   return (
     <Box bg={bg} as="nav" backdropFilter={"blur(8px)"} className="sticky top-0 z-50 w-full bg-transparent py-4 px-4 md:px-10">
@@ -41,30 +50,31 @@ function Header () {
           </Link>
         </div>
 
-
         <HStack>
+          {loggedIn ?
+            <><Link href="/feed">
+              <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
+                <IoNewspaperOutline />
+              </IconButton>
+            </Link>
 
-        <Link href="/feed">
-        <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
-          <IoNewspaperOutline />
-        </IconButton>
-        </Link>
-        
 
-        <Link href="/account">
-        <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
-          <IoSettingsOutline />
-        </IconButton>
-        </Link>
+              <Link href="/account">
+                <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
+                  <IoSettingsOutline />
+                </IconButton>
+              </Link>
 
-        <Link href="/profile">
-        <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
-          <AiOutlineUser />
-        </IconButton>
-        </Link>
+              <Link href="/profile">
+                <IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}>
+                  <AiOutlineUser />
+                </IconButton>
+              </Link></> : <></>
+          }
+
           <ToggleMode />
           <ChangeLanguage />
-          <ConnectWallet/>
+          <ConnectWallet />
           {/* <Sidebar /> */}
         </HStack>
       </Box>
