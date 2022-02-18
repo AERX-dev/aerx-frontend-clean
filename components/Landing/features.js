@@ -49,7 +49,24 @@ function Features() {
           </Center>
         </Box>
 
+        <Box >
+          <ChakraImage src="/money.png" alt="money" />
+        </Box>
+
+
         <Box>
+          <Center height="100%" >
+            <Heading textAlign="center" position="relative">
+              Monetize your content easily.
+
+              <Box color={letterColor} fontWeight={400} fontSize="100px" position="absolute" top={-10} left={2} zIndex={-1}>
+                03
+              </Box>
+            </Heading>
+          </Center>
+        </Box>
+
+        <Box >
           <ChakraImage src="/money.png" alt="money" />
         </Box>
 
