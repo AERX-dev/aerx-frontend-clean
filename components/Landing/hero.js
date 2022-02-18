@@ -21,7 +21,7 @@ function HeroSection() {
               alt={t('logoAlt')}
               className="rounded-sm"
               layout="responsive"
-              priority
+              priority="true"
               display="inline"
               cursor={"pointer"}
               width={"100px"}
