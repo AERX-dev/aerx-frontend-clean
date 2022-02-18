@@ -27,8 +27,8 @@ function Footer() {
 					alt={t('logoAlt')}
 					className="rounded-sm"
 					layout="responsive"
-					lazyLoad
 					margin="0 auto"
+					lazyload="true"
 					mb={8}
 					cursor={"pointer"}
 					width={"150px"}
