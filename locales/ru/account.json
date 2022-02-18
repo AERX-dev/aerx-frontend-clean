@@ -1,13 +1,13 @@
 {
-  "title": "Account", 
+  "title": "Аккаунт", 
   "label": {
-    "username": "Username",
-    "email": "Email",
-    "fullName": "Full Name",
-    "profilePicture": "Profile Picture",
-    "headerPicture": "Header Picture",
-    "aboutMe": "About Me", 
-    "save": "Save",
-    "upload": "Upload"
+    "username": "Имя пользователя",
+    "email": "Эмейл",
+    "fullName": "Имя фамилия",
+    "profilePicture": "Аватар",
+    "headerPicture": "Картинка шапки",
+    "aboutMe": "Обо мне", 
+    "save": "Сохранить",
+    "upload": "Загрузить"
   }
 }
