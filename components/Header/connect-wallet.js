@@ -34,9 +34,8 @@ function ConnectWallet() {
 
 	return !state.walletConnection.isSignedIn() ?
 	<IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}
-	onClick={ async () => {
-		await loginNFT( state );
-			// loginToken(state);
+	onClick={() => {
+		loginToken( state );
 	}}>
 	<IoWalletOutline />
 </IconButton>
