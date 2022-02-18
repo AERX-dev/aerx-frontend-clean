@@ -32,7 +32,6 @@ function Header () {
               alt={t('logoAlt')}
               className="rounded-sm"
               layout="responsive"
-              priority
               cursor={"pointer"}
               width={"80px"}
             />
