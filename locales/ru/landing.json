@@ -1,17 +1,23 @@
 {
   "heroSection": {
     "title": "Добро пожаловать в",
-    "subheading": "Модульная социальная сеть.", 
+    "subheading": "Модульная социальная сеть.",
     "buttonText": "Начать"
-  }, 
-  "features": [
-    {
-      "title": "foobar"
-    }
-  ], 
+  },
+  "features": {
+    "title": "Функционал",
+    "featuresArr": [
+      {
+        "title": "feature1"
+      },
+      {
+        "title": "feature2"
+      }
+    ]
+  },
   "emailCapture": {
     "title": "Электронная почта Подписаться",
-    "placeholder": "Адрес электронной почты", 
+    "placeholder": "Адрес электронной почты",
     "buttonText": "Подписаться"
   }
 }
