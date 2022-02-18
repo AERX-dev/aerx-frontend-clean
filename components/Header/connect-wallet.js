@@ -5,7 +5,7 @@ import {
 } from "@chakra-ui/react";
 import useTranslation from "next-translate/useTranslation";
 import { IoWalletOutline, IoExitOutline } from "react-icons/io5";
-import { login, logout } from '../../lib/auth'
+import { loginToken, loginNFT, logout } from '../../lib/auth'
 import { useState, useEffect } from "react";
 import { nearStore } from '../../stores/near.js';
 
@@ -14,7 +14,17 @@ function ConnectWallet() {
 	const [ mounted, setMounted ] = useState(false);
 	const state = nearStore( state => state );
 	
-	useEffect(() => setMounted(true), []);
+	useEffect(() => {
+		setMounted(true);
+		// in this case, we only care to query the contract when signed in
+		if (window.walletConnection && window.walletConnection.isSignedIn()) {
+			console.log("user is signed in");
+			console.log("wallet:")
+			console.log(window.walletConnection);
+			console.log("contract:");
+			console.log(window.contract);
+		  }
+	}, []);
 
 	if (!mounted) {
 		return <div />;
@@ -24,8 +34,9 @@ function ConnectWallet() {
 
 	return !state.walletConnection.isSignedIn() ?
 	<IconButton fontSize="lg" aria-label={t("ariaWallet")} _hover={{ bg: "none" }} _active={{ bg: "none" }} rounded="full" variant={"outline"}
-	onClick={() => {
-		login( state );
+	onClick={ async () => {
+		await loginNFT( state );
+			// loginToken(state);
 	}}>
 	<IoWalletOutline />
 </IconButton>
