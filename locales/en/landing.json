@@ -1,17 +1,23 @@
 {
   "heroSection": {
     "title": "Welcome To",
-    "subheading": "A modular social network.", 
+    "subheading": "A modular social network.",
     "buttonText": "Get Started"
-  }, 
-  "features": [
-    {
-      "title": "foobar"
-    }
-  ], 
+  },
+  "features": {
+    "title": "Features",
+    "featuresArr": [
+      {
+        "title": "feature1"
+      },
+      {
+        "title": "feature2"
+      }
+    ]
+  },
   "emailCapture": {
     "title": "Email Subscribe",
-    "placeholder": "Enter your email address", 
+    "placeholder": "Enter your email address",
     "buttonText": "Subscribe"
   }
 }
