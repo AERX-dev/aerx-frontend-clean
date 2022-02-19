@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 // import Account from "../components/Account";
-
+import {useState, useEffect} from 'react';
 import {
   Box,
   Heading,
@@ -17,8 +17,37 @@ import useTranslation from "next-translate/useTranslation";
 import { getTotalSupply } from "../lib/tokenContract";
 
 const Page = () => {
+  const [state, setState] = useState({
+    username:"",
+    email: "",
+    fullName: "",
+    aboutMe: ""
+  });
 
   const { t } = useTranslation('account');
+
+  useEffect(()=>{
+  }, []);
+
+
+  function handleChange (event, currentVal) {
+    console.log(event.target);
+    const value = event.nativeEvent.data;
+    setState({
+      ...state,
+      [event.target.placeholder]: currentVal+value
+    });
+  
+    event.preventDefault();
+  }
+
+  function handleSave (event) {    
+    //1. Put the values from our fields into a JSON
+    //2. Send the json over to IPFS & get the link for the data
+    //3. Put the link to JSON's ipfs into NFTTokenMetadata object
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
 
   return (
     <Layout>
@@ -49,28 +78,26 @@ const Page = () => {
           <FormLabel>{t('label.username')}</FormLabel>
           <InputGroup>
             <InputLeftElement
-              pointerEvents='none'
-
-            >
+              pointerEvents='none'>
               <AtSignIcon color='gray.300' />
             </InputLeftElement>
-            <Input placeholder="username" type="text" />
+            <Input placeholder="username" type="text" value={state.username} onChange={(e)=>handleChange(e, state.username)}/>
           </InputGroup>
         </FormControl>
 
         <FormControl mb={2}>
           <FormLabel>{t('label.email')}</FormLabel>
-          <Input type="text" placeholder="email" />
+          <Input type="email" placeholder="email" value={state.emaill} onChange={(e)=>handleChange(e, state.email)} />
         </FormControl>
 
         <FormControl mb={2}>
           <FormLabel>{t('label.fullName')}</FormLabel>
-          <Input type="email" placeholder="fullName" />
+          <Input type="text" placeholder="fullName" value={state.fullName} onChange={(e)=>handleChange(e, state.fullName)} />
         </FormControl>
 
         <FormControl mb={2}>
           <FormLabel>{t('label.aboutMe')}</FormLabel>
-          <Textarea type="email" placeholder="aboutMe" />
+          <Textarea type="text" placeholder="aboutMe" value={state.aboutMe} onChange={(e)=>handleChange(e, state.aboutMe)} />
         </FormControl>
 
         <Button colorScheme="green" mt={2} size="lg">
