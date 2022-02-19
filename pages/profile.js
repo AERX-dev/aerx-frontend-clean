@@ -91,7 +91,7 @@ const Profile = () => {
 
     <Box maxWidth={1000} margin="0 auto" className="px-4 md:px-10" py={4} zIndex={10} position={"relative"} minHeight="100vh">
       <Grid templateColumns={["repeat(100%)", "repeat(100%)", "220px calc(100% - 200px)"]} gap="20px">
-        <Box overflow={"hidden"} borderWidth={2} height="320px" rounded="lg" maxWidth={["100%", "400px", "225px"]} bg={picBg} margin="0 auto">
+        <Box overflow={"hidden"} borderWidth={2} height="320px" rounded="lg" width="100%" maxWidth={["100%", "400px", "225px"]} bg={picBg} margin="0 auto">
           {profileImage()}
 
         </Box>

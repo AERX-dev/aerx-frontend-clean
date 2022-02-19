@@ -126,9 +126,8 @@ const Page = () => {
   return (
     <Layout>
 
-
-      <Box className="px-4 md:px-10" py={4}>
-        <Heading as="h1" mb={5}>{t('title')}</Heading>
+      <Box className="px-4 md:px-10" py={2}>
+        <Heading as="h1" mb={3}>{t('title')}</Heading>
 
         <FormControl mb={2}>
           <FormLabel>{t('label.headerPicture')}</FormLabel>
@@ -168,7 +167,7 @@ const Page = () => {
 
           </Box>
 
-          <Box pr={8}>
+          <Box pl={[0, 0, 1]} pr={8}>
 
           <FormControl mb={2}>
           <FormLabel>{t('label.fullName')}</FormLabel>
