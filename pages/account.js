@@ -146,13 +146,13 @@ const Page = () => {
 
 
         <Grid templateColumns={["repeat(100%)", "repeat(100%)", "220px calc(100% - 200px)"]} gap="20px">
-          <Box  overflow={"hidden"} rounded="lg" maxWidth={["100%", "400px", "225px"]}  margin="0 auto">
+          <Box overflow={"hidden"} rounded="lg" maxWidth={["100%", "400px", "225px"]} margin="0 auto">
 
             <FormControl mb={2}  >
               <FormLabel>{t('label.profilePicture')}</FormLabel>
               <Box height="320px" mb={2}>
-               {profileImage()}
-              
+                {profileImage()}
+
               </Box>
 
               <Button size="sm" colorScheme={"blue"} mb={2} onClick={() => { widgetApi.current.openDialog() }}>
@@ -169,63 +169,63 @@ const Page = () => {
 
           <Box pl={[0, 0, 1]} pr={8}>
 
-          <FormControl mb={2}>
-          <FormLabel>{t('label.fullName')}</FormLabel>
-          <Input type="email" defaultValue={profile.fullName} placeholder="fullName" onChange={update} data-path="fullName" />
-        </FormControl>
+            <FormControl mb={2}>
+              <FormLabel>{t('label.fullName')}</FormLabel>
+              <Input type="email" defaultValue={profile.fullName} placeholder="fullName" onChange={update} data-path="fullName" />
+            </FormControl>
 
-          <FormControl mb={2}>
-          <FormLabel>{t('label.username')}</FormLabel>
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents='none'
+            <FormControl mb={2}>
+              <FormLabel>{t('label.username')}</FormLabel>
+              <InputGroup>
+                <InputLeftElement
+                  pointerEvents='none'
 
-            >
-              <AtSignIcon color='gray.300' />
-            </InputLeftElement>
-            <Input placeholder="username" defaultValue={profile.username} type="text" onChange={update} data-path="username" />
-          </InputGroup>
-        </FormControl>
+                >
+                  <AtSignIcon color='gray.300' />
+                </InputLeftElement>
+                <Input placeholder="username" defaultValue={profile.username} type="text" onChange={update} data-path="username" />
+              </InputGroup>
+            </FormControl>
 
-        <FormControl mb={2}>
-          <FormLabel>{t('label.email')}</FormLabel>
-          <Input type="text" defaultValue={profile.email} placeholder="email" onChange={update} data-path="email" />
-        </FormControl>
-
-       
-
-        <FormControl mb={2}>
-          <FormLabel>{t('label.aboutMe')}</FormLabel>
-          <Textarea type="email" defaultValue={profile.aboutMe} placeholder="aboutMe" onChange={update} data-path="aboutMe" />
-        </FormControl>
-
-        <FormControl mb={2}>
-          <FormLabel>{t('label.city')}</FormLabel>
-          <Input placeholder="city" defaultValue={profile.city} onChange={update} data-path="city" />
-        </FormControl>
-
-        <FormControl mb={2}>
-          <FormLabel>{t('label.state')}</FormLabel>
-          <Input placeholder="State/Province" defaultValue={profile.state} onChange={update} data-path="state" />
-        </FormControl>
-
-        <FormControl mb={2}>
-          <FormLabel>{t('label.country')}</FormLabel>
-          <Input placeholder="Country" defaultValue={profile.country} onChange={update} data-path="country" />
-        </FormControl>
+            <FormControl mb={2}>
+              <FormLabel>{t('label.email')}</FormLabel>
+              <Input type="text" defaultValue={profile.email} placeholder="email" onChange={update} data-path="email" />
+            </FormControl>
 
 
 
+            <FormControl mb={2}>
+              <FormLabel>{t('label.aboutMe')}</FormLabel>
+              <Textarea type="email" defaultValue={profile.aboutMe} placeholder="aboutMe" onChange={update} data-path="aboutMe" />
+            </FormControl>
 
-        <Button colorScheme="green" mt={2} size="lg" onClick={save}>
-          {t('label.save')}
-        </Button>
+            <FormControl mb={2}>
+              <FormLabel>{t('label.city')}</FormLabel>
+              <Input placeholder="city" defaultValue={profile.city} onChange={update} data-path="city" />
+            </FormControl>
+
+            <FormControl mb={2}>
+              <FormLabel>{t('label.state')}</FormLabel>
+              <Input placeholder="State/Province" defaultValue={profile.state} onChange={update} data-path="state" />
+            </FormControl>
+
+            <FormControl mb={2}>
+              <FormLabel>{t('label.country')}</FormLabel>
+              <Input placeholder="Country" defaultValue={profile.country} onChange={update} data-path="country" />
+            </FormControl>
+
+
+
+
+            <Button colorScheme="green" mt={2} size="lg" onClick={save}>
+              {t('label.save')}
+            </Button>
           </Box>
         </Grid>
 
 
 
-       
+
       </Box>
     </Layout>
   )
