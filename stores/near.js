@@ -6,8 +6,12 @@ const nearStore = create(set => ({
   removeConnection: () => set(state => ({ connection: null })),
   
   walletConnection: null, 
-  setWalletConnection: ( walletConnection ) => set(state => ({ walletConnection })),
+  setWalletConnection: ( walletConnection ) => set(() => ({ walletConnection: walletConnection })),
   removeWalletConnection: () => set(state => ({ walletConnection: null })),
+
+  accountId: null, 
+  setAccountId: ( accountId ) => set(state => ({ accountId })),
+  removeAccountId: () => set(state => ({ accountId: null })),
 
   tokenContract: null, 
   setTokenContract: ( tokenContract ) => set(state => ({ tokenContract })),
