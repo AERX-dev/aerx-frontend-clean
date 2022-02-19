@@ -107,10 +107,14 @@ const Page = () => {
     setProfileLoaded(true);
   }
 
+  if ( profileState.profile != profile ) {
+    setProfile(profileState.profile);
+  }
+
   return (
     <Layout>
           { hiddenValue() }
-        <Box className="px-4 md:px-10" py={2}>
+        <Box className="px-4 md:px-10" py={2} maxWidth={1100} margin="0 auto">
         <Heading as="h1" mb={3}>{t('title')}</Heading>
 
         <FormControl mb={2}>
