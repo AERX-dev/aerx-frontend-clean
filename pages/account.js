@@ -13,8 +13,8 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import { AtSignIcon } from "@chakra-ui/icons";
-
 import useTranslation from "next-translate/useTranslation";
+import { getTotalSupply } from "../lib/tokenContract";
 
 const Page = () => {
 
@@ -23,7 +23,7 @@ const Page = () => {
   return (
     <Layout>
 
-      
+
       <Box className="px-4 md:px-10" py={4}>
         <Heading as="h1" mb={5}>{t('title')}</Heading>
 
@@ -50,7 +50,7 @@ const Page = () => {
           <InputGroup>
             <InputLeftElement
               pointerEvents='none'
-              
+
             >
               <AtSignIcon color='gray.300' />
             </InputLeftElement>
