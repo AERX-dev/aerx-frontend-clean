@@ -1,6 +1,4 @@
 import Layout from "../components/Layout";
-// import Account from "../components/Account";
-import {useState, useEffect} from 'react';
 import {
   Box,
   Heading,
@@ -13,63 +11,30 @@ import {
   InputLeftElement,
   Image as ChakraImage,
   Grid,
+  Skeleton,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { AtSignIcon } from "@chakra-ui/icons";
 import supabase from '../lib/supabase';
 import { Widget } from "@uploadcare/react-widget";
 
+import { profileStore } from "../stores/profile";
+
 import useTranslation from "next-translate/useTranslation";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useReducer } from "react";
+
+
+
 
 const Page = () => {
   const profileId = "samullman.testnet"
-  const [profile, setProfile] = useState({});
-  const [first, setFirst] = useState(true);
+  const profileState = profileStore(state => state);
+  const [ profileLoaded, setProfileLoaded ] = useState(false);
+  const [ profile, setProfile ] = useState(profileState.profile || {});
   const { t } = useTranslation('account');
 
   const widgetApi = useRef();
   const widgetApiHeader = useRef();
-
-  async function getProfile() {
-
-    const { data, error } = await supabase
-      .from('profiles')
-      .select(`
-        *, 
-        follows(*), 
-        posts!posts_profileId_fkey(*)
-      `)
-      .eq('walletId', profileId);
-
-    if (!error && data.length) {
-      setProfile(data[0]);
-    } else {
-      createProfile(profileId);
-    }
-  }
-
-  async function createProfile(profileId) {
-    console.log("profileId", profileId)
-    const { data, error } = await supabase
-      .from('profiles')
-      .insert([
-        { walletId: profileId }
-      ]);
-
-    if (!error && data.length) {
-      setProfile(data[0]);
-    } else {
-      console.log(error)
-      alert("Error creating profile");
-    }
-  }
-
-  useEffect(() => {
-    if (first) {
-      getProfile();
-      setFirst(false);
-    }
-  }, [])
 
   function profileImageChange(info) {
     let newProfile = profile;
@@ -102,6 +67,7 @@ const Page = () => {
 
     if (!error && data.length) {
       setProfile(data[0]);
+      profileState.setProfile(data[0]);
     } else {
       console.log(error)
     }
@@ -113,6 +79,8 @@ const Page = () => {
       return <Box height="220px" rounded="lg" overflow="hidden" mb={3}>
         <ChakraImage src={profile.headerImage} alt="header" width="100%" objectFit="cover" height="100%" />
       </Box>
+    } else {
+      <Box height="220px" bg={ picBg } rounded="lg" overflow="hidden" mb={3}></Box>
     }
 
   }
@@ -123,10 +91,26 @@ const Page = () => {
     }
   }
 
+
+  const picBg = useColorModeValue("gray.200", "gray.700");
+
+
+  function hiddenValue () {
+    if ( profileState.profile ) {
+      return <input type="hidden" value={ profileState.profile.walletId } />
+    }
+  }
+
+
+  if ( profileState.profile && profileLoaded === false ) {
+    setProfile(profileState.profile);
+    setProfileLoaded(true);
+  }
+
   return (
     <Layout>
-
-      <Box className="px-4 md:px-10" py={2}>
+          { hiddenValue() }
+        <Box className="px-4 md:px-10" py={2}>
         <Heading as="h1" mb={3}>{t('title')}</Heading>
 
         <FormControl mb={2}>
@@ -150,7 +134,7 @@ const Page = () => {
 
             <FormControl mb={2}  >
               <FormLabel>{t('label.profilePicture')}</FormLabel>
-              <Box height="320px" mb={2}>
+              <Box bg={ picBg } height="320px" rounded="lg"  width={["100%", "400px", "225px"]} mb={2}>
                 {profileImage()}
 
               </Box>

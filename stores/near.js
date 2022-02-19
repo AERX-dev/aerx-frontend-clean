@@ -1,4 +1,5 @@
 import create from 'zustand'
+import { getProfile } from "../lib/supabase.js";
 
 const nearStore = create(set => ({
   connection: null,
@@ -20,6 +21,9 @@ const nearStore = create(set => ({
   nftContract: null,
   setNFTContract: (nftContract) => set(state => ({ nftContract })),
   removeNFTContract: () => set(state => ({ nftContract: null })),
+
+  profile: null,
+  setProfile: (profile) => set(state => ({ profile })),
 }))
 
 export { nearStore }
