@@ -6,41 +6,109 @@ import {
   Grid,
   Text,
   Button, 
-
+Image as ChakraImage, 
 } from "@chakra-ui/react";
-
+import supabase from "../lib/supabase";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import NewPost from "../components/Post/new-post";
 import Layout from "../components/Layout";
-
+import { useState, useEffect } from "react";
 const Profile = () => {
+  const [ first, setFirst ] = useState(true);
+  const [ profile, setProfile ] = useState({});
+  const profileId = "samullman.testnet";
+
+  async function getProfile() {
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .select(`
+        *, 
+        follows(*), 
+        posts!posts_profileId_fkey(*)
+      `)
+      .eq('walletId', profileId);
+
+    if (!error && data.length) {
+      setProfile(data[0]);
+    } else {
+      createProfile(profileId);
+    }
+  }
+
+  async function createProfile(profileId) {
+    console.log("profileId", profileId)
+    const { data, error } = await supabase
+      .from('profiles')
+      .insert([
+        { walletId: profileId }
+      ]);
+
+    if (!error && data.length) {
+      setProfile(data[0]);
+    } else {
+      console.log(error)
+      alert("Error creating profile");
+    }
+  }
+
+  useEffect(() => {
+    if (first) {
+      getProfile();
+      setFirst(false);
+    }
+  }, [])
+
+
+  const bg = useColorModeValue("white", "gray.800");
   const picBg = useColorModeValue("gray.200", "gray.700");
   const postBg = useColorModeValue("gray.50", "gray.900");
   const imageBg = useColorModeValue("gray.100", "#0a0a0a");
+
+  function profileImage () {
+    if ( profile.profileImage ) {
+      return (
+        <ChakraImage src={ profile.profileImage } alt="profile" height="100%" width="100%" objectFit="cover" />
+      )
+    } 
+  }
+
+  function headerImage () {
+    if ( profile.profileImage ) {
+      return (
+        <ChakraImage src={ profile.headerImage } alt="header" height="100%" width="100%" objectFit="cover" />
+      )
+    } 
+  }
+
+
+
   return <Layout>
 
-    <Box height="250px" bg={imageBg } width="100%" position="absolute">
+    <Box height="250px" bg={imageBg } width="100%" position="fixed">
+      { headerImage() }
     </Box>
 
-    <Box className="px-4 md:px-10" py={4} zIndex={10} position={"relative"} minHeight="100vh">
+    <Box maxWidth={1000} margin="0 auto" className="px-4 md:px-10" py={4} zIndex={10} position={"relative"} minHeight="100vh">
       <Grid templateColumns={["repeat(100%)", "repeat(100%)", "220px calc(100% - 200px)"]} gap="20px">
-        <Box>
-          <Box height="320px" rounded="lg" maxWidth={["100%", "400px", "225px"]} bg={picBg} margin="0 auto">
+        <Box overflow={"hidden"} borderWidth={2} height="320px" rounded="lg" maxWidth={["100%", "400px", "225px"]} bg={picBg} margin="0 auto">
+          {profileImage()}
 
-          </Box>
         </Box>
 
         <Box pr={8}>
+          <Box bg={bg} p={4} rounded="lg" borderWidth={2} mb={4}>
           <Heading>
-            Full Name
+            { profile.fullName }
           </Heading>
 
           <Text mb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            { profile.aboutMe }
           </Text>
 
-          <Box mb={4}>
+          <Box >
           <NewPost />
+          </Box>
           </Box>
 
           {

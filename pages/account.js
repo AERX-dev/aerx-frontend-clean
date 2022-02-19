@@ -62,7 +62,6 @@ const Page = () => {
     }
   }
 
-
   useEffect(() => {
     if (first) {
       getProfile();
