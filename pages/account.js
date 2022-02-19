@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 // import Account from "../components/Account";
-
+import {useState, useEffect} from 'react';
 import {
   Box,
   Heading,
