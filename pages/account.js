@@ -30,7 +30,7 @@ const Page = () => {
   const profileId = "samullman.testnet"
   const profileState = profileStore(state => state);
   const [ profileLoaded, setProfileLoaded ] = useState(false);
-  const [ profile, setProfile ] = useState(profileState.profile || {});
+  const [ profile, setProfile ] = useState(profileState.profile || {posts: [], follows: []});
   const { t } = useTranslation('account');
 
   const widgetApi = useRef();
@@ -107,7 +107,7 @@ const Page = () => {
     setProfileLoaded(true);
   }
 
-  if ( profileState.profile != profile ) {
+  if ( profileState.profile != profile && profileState.profile ) {
     setProfile(profileState.profile);
   }
 

@@ -15,9 +15,11 @@ import {
   SliderFilledTrack,
   SliderThumb,
   SliderMark,
+	Image as ChakraImage, 
 
 } from "@chakra-ui/react";
 
+import { profileStore } from "../../stores/profile";
 import { useState } from "react"
 import { AiOutlineThunderbolt } from "react-icons/ai";
 
@@ -28,6 +30,10 @@ function Post ({ el }) {
 	const sliderThumbColor = useColorModeValue("gray.900", "gray.900");
   const { isOpen, onOpen, onClose } = useDisclosure()
 	const [ sliderValue, setSliderValue ] = useState(0);
+	let profileState = profileStore(state => state);
+	if ( !profileState ) {
+		profileState = {}
+	}
 
 	function updateSlider ( e ) {
 		setSliderValue( e )
@@ -41,18 +47,27 @@ function Post ({ el }) {
 	return <>
 	<Box cursor={"pointer"} onClick={ onOpen } key={el + "pro"} bg={postBg} rounded="lg" borderWidth={2} mb={4}>
 	<Box borderBottom={2} p={4} display="flex" alignContent={"center"} gap={2}>
-								<Box display="inline-block" height="40px" width="40px" bg="gray.500" rounded="full">
-							
+								<Box display="inline-block" height="40px" width="40px" bg="gray.500" rounded="full" overflow={"hidden"}>
+									<ChakraImage src={ profileState.profile.profileImage } objectFit="cover" alt={ profileState.profile.fullName } />
 								</Box>
 
 								<Box fontSize="lg" pt={1}>
-									nkfdjsan
+									{ profileState.profile.fullName }
 								</Box>
 							</Box>
 
 	<Box px={4} >
-		{el.body}
+		<Box mb={1}>
+			{el.body}
+		</Box>
+
+		<Box>
+		<small>
+			{ el.created_at }
+			</small>
+		</Box>
 	</Box>
+
 	<Box borderTop={2} p={4}>
 		<AiOutlineThunderbolt style={{ display: "inline" }} /> {[10, 20, 30, 40][Math.floor(Math.random() * 4)]}
 	</Box>
