@@ -15,6 +15,8 @@ import {
 import { AtSignIcon } from "@chakra-ui/icons";
 import useTranslation from "next-translate/useTranslation";
 import { getTotalSupply } from "../lib/tokenContract";
+import { registerUserIfNotRegistered } from "../lib/auth";
+import { nearStore } from "../stores/near";
 
 const Page = () => {
   const [state, setState] = useState({
@@ -23,12 +25,11 @@ const Page = () => {
     fullName: "",
     aboutMe: ""
   });
-
+  const nearState = nearStore(state=>state);
   const { t } = useTranslation('account');
-
+  
   useEffect(()=>{
   }, []);
-
 
   function handleChange (event, currentVal) {
     console.log(event.target);
@@ -45,7 +46,10 @@ const Page = () => {
     //1. Put the values from our fields into a JSON
     //2. Send the json over to IPFS & get the link for the data
     //3. Put the link to JSON's ipfs into NFTTokenMetadata object
-    alert('A name was submitted: ' + this.state.value);
+    if(nearState.tokenContract){
+      registerUserIfNotRegistered(nearState);
+    }
+    // alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
   }
 
@@ -100,7 +104,7 @@ const Page = () => {
           <Textarea type="text" placeholder="aboutMe" value={state.aboutMe} onChange={(e)=>handleChange(e, state.aboutMe)} />
         </FormControl>
 
-        <Button colorScheme="green" mt={2} size="lg">
+        <Button colorScheme="green" mt={2} size="lg" onClick={handleSave}>
           {t('label.save')}
         </Button>
       </Box>
