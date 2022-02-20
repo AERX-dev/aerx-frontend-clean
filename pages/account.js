@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { AtSignIcon } from "@chakra-ui/icons";
 import useTranslation from "next-translate/useTranslation";
-import { getTotalSupply } from "../lib/tokenContract";
+import { getTotalSupply, sendToken } from "../lib/tokenContract";
 import { registerUserIfNotRegistered } from "../lib/auth";
 import { nearStore } from "../stores/near";
 
@@ -49,7 +49,6 @@ const Page = () => {
     if(nearState.tokenContract){
       registerUserIfNotRegistered(nearState);
     }
-    // alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
   }
 
