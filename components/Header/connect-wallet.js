@@ -19,7 +19,7 @@ function ConnectWallet() {
 		setMounted(true);
 		// in this case, we only care to query the contract when signed in
 		if (window.walletConnection && window.walletConnection.isSignedIn()) {
-			console.log(getTotalSupply());
+			// console.log(getTotalSupply());
 		}
 	}, []);
 
