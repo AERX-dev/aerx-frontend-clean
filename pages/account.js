@@ -57,12 +57,12 @@ const Page = () => {
   }
 
   async function save() {
-    let profileToSave = profile;
+    let profileToSave = JSON.parse(JSON.stringify(profile));
     delete profileToSave.follows;
     delete profileToSave.posts;
     const { data, error } = await supabase
       .from('profiles')
-      .update(profile)
+      .update(profileToSave)
       .match({ walletId: profileId })
 
     if (!error && data.length) {
