@@ -18,7 +18,7 @@ function Footer() {
 	const { colorMode } = useColorMode();
 
 	return (
-		<Box as="footer" className="px-4 py-10 md:px-10">
+		<Box as="footer" className="px-4 py-10 md:px-10" pt={100}>
 
 			<Box textAlign={"center"}>
 				<Link href="/">

@@ -9,7 +9,7 @@ import Slider from "./slider";
 function Features () {
   const { t } = useTranslation('landing');
   return (
-    <Box as="section" py={50}>
+    <Box as="section" pt={50}>
 
     <Heading textAlign={"center"} mb={20}>
     {t('features.title')} 
