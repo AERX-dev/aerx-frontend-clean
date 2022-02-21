@@ -49,6 +49,8 @@ const Page = () => {
     setProfile(newProfile);
   }
 
+  
+
   function update(e) {
     let path = e.currentTarget.dataset.path;
     let newProfile = profile;
@@ -63,7 +65,8 @@ const Page = () => {
     const { data, error } = await supabase
       .from('profiles')
       .update(profileToSave)
-      .match({ walletId: profileId })
+      // .match({ walletId: profileId })
+      .match({ walletId: profileToSave.walletId })
 
     if (!error && data.length) {
       setProfile(data[0]);

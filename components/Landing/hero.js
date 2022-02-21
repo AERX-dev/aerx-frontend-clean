@@ -6,6 +6,9 @@ import {
   Image as ChakraImage,
   useColorMode, 
 } from "@chakra-ui/react";
+
+import Tilt from 'react-parallax-tilt';
+
 import useTranslation from "next-translate/useTranslation";
 
 function HeroSection() {
@@ -34,6 +37,11 @@ function HeroSection() {
       <Heading textAlign={"center"} mb={8}>
         {t('heroSection.subheading')}
       </Heading>
+
+
+      <Tilt>
+      <ChakraImage width="220px" margin="0 auto" src="/token.png" alt="token" />
+      </Tilt>
 
       <Box textAlign="center">
         <Button variant="outline" _hover={{ bg: "none" }} _active={{ bg: "none" }}>
