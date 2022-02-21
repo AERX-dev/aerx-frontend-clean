@@ -21,14 +21,24 @@ import { Widget } from "@uploadcare/react-widget";
 import { profileStore } from "../stores/profile";
 
 import useTranslation from "next-translate/useTranslation";
+
 import { useRef, useState, useEffect, useReducer } from "react";
+import { getTotalSupply, sendToken } from "../lib/tokenContract";
+import { registerUserIfNotRegistered } from "../lib/auth";
 import { nearStore } from "../stores/near";
 
 
-
-
 const Page = () => {
-  const state = nearStore(state => state);
+  
+  const [state, setState] = useState({
+    username:"",
+    email: "",
+    fullName: "",
+    aboutMe: ""
+  });
+
+  const nearState = nearStore(state=>state);
+    
   const profileId = state.accountId;//"samullman.testnet"
   const profileState = profileStore(state => state);
   const [ profileLoaded, setProfileLoaded ] = useState(false);
@@ -50,8 +60,14 @@ const Page = () => {
     newProfile.headerImage = info.cdnUrl;
     setProfile(newProfile);
   }
-
   
+  function handleChange (event, currentVal) {
+    console.log(event.target);
+    const value = event.nativeEvent.data;
+    setState({
+      ...state,
+      [event.target.placeholder]: currentVal+value
+    });  
 
   function update(e) {
     let path = e.currentTarget.dataset.path;
@@ -59,6 +75,7 @@ const Page = () => {
     newProfile[path] = e.currentTarget.value;
     setProfile(newProfile);
   }
+
 
   async function save() {
     let profileToSave = JSON.parse(JSON.stringify(profile));
@@ -77,6 +94,16 @@ const Page = () => {
     } else {
       console.log(error)
     }
+
+  function handleSave (event) {    
+    //1. Put the values from our fields into a JSON
+    //2. Send the json over to IPFS & get the link for the data
+    //3. Put the link to JSON's ipfs into NFTTokenMetadata object
+    if(nearState.tokenContract){
+      registerUserIfNotRegistered(nearState);
+    }
+    event.preventDefault();
+
   }
 
   function headerImage() {
@@ -220,6 +247,14 @@ const Page = () => {
 
 
 
+
+        <Button colorScheme="green" mt={2} size="lg" onClick={handleSave}>
+          {t('label.save')}
+        </Button>
+           
+           
+           
+           
       </Box>
     </Layout>
   )
