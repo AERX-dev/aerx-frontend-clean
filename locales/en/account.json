@@ -8,6 +8,9 @@
     "headerPicture": "Header Picture",
     "aboutMe": "About Me", 
     "save": "Save",
-    "upload": "Upload"
+    "upload": "Upload",
+    "city": "City",
+    "state": "State/Province",
+    "country": "Country"
   }
 }

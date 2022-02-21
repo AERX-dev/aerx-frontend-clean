@@ -8,6 +8,9 @@
     "headerPicture": "Картинка шапки",
     "aboutMe": "Обо мне", 
     "save": "Сохранить",
-    "upload": "Загрузить"
+    "upload": "Загрузить",
+    "city": "City",
+    "state": "State/Province",
+    "country": "Country"
   }
 }
