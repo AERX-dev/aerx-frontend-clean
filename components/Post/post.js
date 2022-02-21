@@ -22,8 +22,11 @@ import {
 import { profileStore } from "../../stores/profile";
 import { useState } from "react"
 import { AiOutlineThunderbolt } from "react-icons/ai";
+import { sendToken } from "../../lib/tokenContract";
+import { nearStore } from "../../stores/near";
 
 function Post({ el }) {
+	const nearState = nearStore(state => state);
 	const postBg = useColorModeValue("white", "gray.900");
 	const sliderTrack = useColorModeValue("yellow.400", "yellow.400");
 	const sliderTrackBg = useColorModeValue("yellow.100", "yellow.100");
@@ -40,6 +43,8 @@ function Post({ el }) {
 	};
 	function sendMoney() {
 		//todo: send money here
+		console.log(nearState.profile);
+		// sendToken(nearState);
 		onClose();
 	}
 

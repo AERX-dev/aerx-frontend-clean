@@ -21,6 +21,7 @@ import Post from "../components/Post/post";
 import { useState, useEffect } from "react";
 import { nearStore } from "../stores/near";
 import { getBalance } from "../lib/tokenContract";
+import useTranslation from "next-translate/useTranslation";
 
 const Profile = () => {
   const [first, setFirst] = useState(true);
@@ -29,6 +30,7 @@ const Profile = () => {
   const [profileLoaded, setProfileLoaded] = useState(false);
   const [balance, setBalance] = useState(0);
   const [profile, setProfile] = useState(profileState.profile || { posts: [], follows: [] });
+  const { t } = useTranslation('profile');
 
   const bg = useColorModeValue("white", "gray.800");
   const pageBg = useColorModeValue("gray.50", "gray.800");
@@ -36,9 +38,11 @@ const Profile = () => {
   const imageBg = useColorModeValue("gray.100", "#0a0a0a");
 
   useEffect(async ()=>{
+    if(nearState.tokenContract){
     let res = await getBalance(nearState);
     setBalance(res);
-  }, []);
+    }
+  }, [nearState]);
 
   function profileImage() {
     if (profile.profileImage) {
@@ -79,7 +83,7 @@ const Profile = () => {
               <HStack px={2}>
                 <Image src={lightningbolt} alt='Lightning bolt' />
                 <VStack px={8}>
-                <Text textAlign="right">Balance</Text>
+                <Text textAlign="right">{t('label.balance')}</Text>
                 <Text>{balance}</Text>
                 </VStack>
               </HStack>
@@ -96,7 +100,7 @@ const Profile = () => {
               </Text>
 
               <Box >
-                <NewPost />
+                <NewPost state={nearState} />
               </Box>
             </Box>
 
