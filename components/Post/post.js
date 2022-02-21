@@ -39,7 +39,7 @@ function Post({ el }) {
 		setSliderValue(e)
 	};
 	function sendMoney() {
-		// send money here
+		//todo: send money here
 		onClose();
 	}
 
