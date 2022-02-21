@@ -6,6 +6,8 @@ import { nearStore } from '../stores/near.js';
 import { profileStore } from '../stores/profile.js';
 import { useEffect, useState } from "react";
 import theme from "../public/theme.js";
+import "keen-slider/keen-slider.min.css"
+import "../components/Landing/slider.css";
 
 function MyApp({ Component, pageProps }) {
   const state = nearStore( state => state );

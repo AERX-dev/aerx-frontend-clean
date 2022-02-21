@@ -8,7 +8,8 @@ import Section06 from "./06-section";
 import Section07 from "./07-section";
 import ChannelSection from "./channel";
 import Features from "./features";
+import Team from "./team";
 import EmailCapture from "./email-capture";
 
 
-export { HeroSection, EmailCapture, Features };
+export { HeroSection, EmailCapture, Features, Team };
