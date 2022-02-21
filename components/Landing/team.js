@@ -34,7 +34,7 @@ function Team() {
 
 
 		{
-      name: "Max",
+      name: "Inna",
 			image: "/inna.png",
     },
 
