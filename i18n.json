@@ -2,7 +2,7 @@
   "locales": ["en", "es", "ru"],
   "defaultLocale": "en",
   "pages": {
-    "*": ["common", "landing", "header", "account", "footer"],
+    "*": ["common", "landing", "header", "account", "footer", "profile"],
     "/": ["landing"]
   }
 }

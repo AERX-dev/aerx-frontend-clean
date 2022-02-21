@@ -9,8 +9,8 @@
     "aboutMe": "Обо мне", 
     "save": "Сохранить",
     "upload": "Загрузить",
-    "city": "City",
-    "state": "State/Province",
-    "country": "Country"
+    "city": "Город",
+    "state": "Регион",
+    "country": "Страна"
   }
 }
