@@ -22,12 +22,14 @@ import { profileStore } from "../stores/profile";
 
 import useTranslation from "next-translate/useTranslation";
 import { useRef, useState, useEffect, useReducer } from "react";
+import { nearStore } from "../stores/near";
 
 
 
 
 const Page = () => {
-  const profileId = "samullman.testnet"
+  const state = nearStore(state => state);
+  const profileId = state.accountId;//"samullman.testnet"
   const profileState = profileStore(state => state);
   const [ profileLoaded, setProfileLoaded ] = useState(false);
   const [ profile, setProfile ] = useState(profileState.profile || {posts: [], follows: []});
@@ -58,6 +60,7 @@ const Page = () => {
 
   async function save() {
     let profileToSave = JSON.parse(JSON.stringify(profile));
+    console.log(profileToSave);
     delete profileToSave.follows;
     delete profileToSave.posts;
     const { data, error } = await supabase
