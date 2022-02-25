@@ -12,10 +12,8 @@ import {
 
 
 
-export default () => {
+export default function Slider () {
   const [opacities, setOpacities] = useState([])
-
-
   const {colorMode} = useColorMode()
   const [sliderRef] = useKeenSlider({
     slides: 3,
