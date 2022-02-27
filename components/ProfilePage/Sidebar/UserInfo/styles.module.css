@@ -9,7 +9,7 @@
 }
 
 .balanceHeading {
-  @apply text-xs  font-jost text-profile-blue-50 ;
+  @apply text-xs  font-jost text-profile-blue-50;
   margin-bottom: 8px;
 }
 
@@ -28,7 +28,6 @@
 
 .iconButtonsContainer {
   @apply flex justify-around;
-  
 }
 
 .userSocialContainer {

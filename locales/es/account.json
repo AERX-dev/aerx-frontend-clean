@@ -1,13 +1,13 @@
 {
-  "title": "Account", 
+  "title": "Account",
   "label": {
     "username": "Username",
     "email": "Email",
     "fullName": "Full Name",
     "profilePicture": "Profile Picture",
     "headerPicture": "Header Picture",
-    "aboutMe": "About Me", 
-    "save": "Save", 
+    "aboutMe": "About Me",
+    "save": "Save",
     "upload": "Upload",
     "city": "City",
     "state": "State/Province",

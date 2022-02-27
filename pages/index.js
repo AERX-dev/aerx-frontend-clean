@@ -1,5 +1,10 @@
 import Head from "next/head";
-import { HeroSection, EmailCapture, Features, Team } from "../components/Landing";
+import {
+  HeroSection,
+  EmailCapture,
+  Features,
+  Team,
+} from "../components/Landing";
 import Layout from "../components/Layout";
 import { Box } from "@chakra-ui/react";
 export default function Home() {
@@ -9,7 +14,7 @@ export default function Home() {
   </Head>;
   return (
     <Layout>
-      <Box className="flex flex-col"> 
+      <Box className="flex flex-col">
         <HeroSection />
         <Features />
         <Team />

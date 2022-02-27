@@ -2,6 +2,6 @@
   @apply flex gap-3;
 }
 
-.vertical{
+.vertical {
   @apply flex-col;
 }
