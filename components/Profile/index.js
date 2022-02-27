@@ -1,13 +1,7 @@
-import {
-	Box
-} from '@chakra-ui/react';
+import { Box } from "@chakra-ui/react";
 
-
-function Account () {
-	return <Box>
-		Hi
-	</Box>
-
+function Account() {
+  return <Box>Hi</Box>;
 }
 
 export default Account;

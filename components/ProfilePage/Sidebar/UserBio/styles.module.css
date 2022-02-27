@@ -9,7 +9,7 @@
 .displayName {
   @apply text-2xl text-profile-blue-100 font-bold font-jost;
   font-size: 32px;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .followBtn {
@@ -33,5 +33,4 @@
 .aboutContent {
   @apply font-work-sans font-medium tracking-wide;
   font-size: 0.8rem;
-
 }

@@ -9,7 +9,7 @@
 .itemHead {
   @apply font-work-sans tracking-wider font-medium;
   font-size: 20px;
-  color: #B9BFD7;
+  color: #b9bfd7;
   margin-top: 8px;
   /* Single line with ellipse*/
   white-space: nowrap;

@@ -7,10 +7,10 @@ const FloatingIconButtons = () => {
   return (
     <IconButtonsGroup orientation="vertical">
       <IconButton>
-        <FiSearch style={{fontSize: 24}}/>
+        <FiSearch style={{ fontSize: 24 }} />
       </IconButton>
       <IconButton>
-        <FiPlus style={{fontSize: 24}}/>
+        <FiPlus style={{ fontSize: 24 }} />
       </IconButton>
     </IconButtonsGroup>
   );
@@ -18,11 +18,13 @@ const FloatingIconButtons = () => {
 
 export default FloatingIconButtons;
 
-{/* <IconButtonsGroup>
+{
+  /* <IconButtonsGroup>
   <IconButton>
     <FcSearch />
   </IconButton>
   <IconButton>
     <FaPlus />
   </IconButton>
-</IconButtonsGroup>; */}
+</IconButtonsGroup>; */
+}

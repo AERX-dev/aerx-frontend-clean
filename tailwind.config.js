@@ -9,7 +9,7 @@ module.exports = {
       fontFamily: {
         jost: ["Jost", "sans-serif"],
         "work-sans": ["Work Sans", "sans-serif"],
-        "cursive": ["Cursive", "sans-serif"],
+        cursive: ["Cursive", "sans-serif"],
       },
       colors: {
         brand: {

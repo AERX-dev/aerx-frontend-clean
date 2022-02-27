@@ -1,13 +1,7 @@
-import {
-	Box, 
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
-function Section () {
-	return (
-		<Box>
-			07
-		</Box>
-	)
+function Section() {
+  return <Box>07</Box>;
 }
 
 export default Section;
