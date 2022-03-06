@@ -128,7 +128,7 @@ const addFile = async (ipfs, content) => {
   };
 };
 
-const getUri = (cid) => {
+const getUrl = (cid) => {
   return `${ipfsGateway}/ipfs/${cid}`;
 };
 
@@ -139,7 +139,7 @@ const upload = async (content) => {
   const order = await placeOrder(api, keyRing, hash, data.size, 0);
   console.log("place order >>", order);
   const uri = getUri(data.cid);
-  return { hash, uri };
+  return { hash, url };
 };
 
-export { upload, addPrepaid, getOrderState, getUri };
+export { upload, addPrepaid, getOrderState, getUrl };
