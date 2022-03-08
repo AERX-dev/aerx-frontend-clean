@@ -28,6 +28,8 @@ import { createUserProfileNFT } from "../lib/NFTContract";
 import { registerUserIfNotRegistered } from "../lib/auth";
 import { nearStore } from "../stores/near";
 
+import { query } from "../lib/query";
+
 const Page = () => {
   const [state, setState] = useState({
     username: "",
@@ -104,16 +106,9 @@ const Page = () => {
     //1. Put the values from our fields into a JSON
     const data = JSON.stringify(profile);
     //2. Send the json over to IPFS & get the link for the data
-    await fetch("/api/ipfs", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: data,
-    })
-      .then((response) => response.json())
-      //3. Put the link to JSON's ipfs into NFTTokenMetadata object
-      .then((data) => createUserProfileNFT(nearState, profileId, data.uri)); // use the returned content uri
+    const result = await query("/upload", data, "application/json");
+    //3. Put the link to JSON's ipfs into NFTTokenMetadata object
+    createUserProfileNFT(nearState, profileId, result.uri);
   }
 
   function headerImage() {

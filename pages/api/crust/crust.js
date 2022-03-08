@@ -6,11 +6,11 @@ import { ApiPromise, WsProvider } from "@polkadot/api";
 import { typesBundleForPolkadot } from "@crustio/type-definitions";
 import { Keyring } from "@polkadot/keyring";
 
-const ipfsGateway = process.env.REACT_APP_IPFS_GATEWAY;
+const ipfsGateway = process.env.IPFS_GATEWAY;
 // crust account mnemonic
-const mnemonic = process.env.REACT_APP_CRUST_MNEMONIC;
+const mnemonic = process.env.CRUST_MNEMONIC;
 // WS address of Crust chain --tesnet
-const crustChainEndpoint = process.env.REACT_APP_CRUST_ENDPOINT;
+const crustChainEndpoint = process.env.CRUST_ENDPOINT;
 
 const header = () => {
   const keyPair = KeyPair.fromRandom("ed25519");
@@ -44,6 +44,7 @@ const header = () => {
 /**
  * Place storage order
  * @param api chain instance
+ * @param keyRing near keyring
  * @param fileCID the cid of file
  * @param fileSize the size of file in ipfs
  * @param tip tip for this order
@@ -65,9 +66,10 @@ const placeOrder = async (api, keyRing, fileCID, fileSize, tip) => {
 /**
  * call on-chain interface to add prepaid money to an order
  * @param api chain instance
+ * @param keyRing near keyring
  * @param cid the cid of file
  * @param amount adding money to prepaid
- * @return send transaction true/false
+ * @return true/false
  */
 const addPrepaid = async (api, keyRing, cid, amount) => {
   // keyring pair will be used in sending transaction
